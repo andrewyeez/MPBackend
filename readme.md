@@ -2,4 +2,4 @@
 Meal Planner Backend service
 
 # TODO
-Mount a host folder to the container folder
+Start creating endpoints and output hard code data for now
