@@ -1,12 +1,30 @@
 {
-  "name": "docker-test",
-  "version": "1.0.0",
-  "description": "",
-  "main": "/app/app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node /app/app.js"
+  "name": "mpbackend",
+  "version": "0.0.1",
+  "description": "Meal Planner Backend RESTful Service",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
   },
-  "author": "Andrew Yee <andrew.yee@mail.com>",
-  "license": "ISC"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewyeez/MPBackend.git"
+  },
+  "keywords": [
+    "Backend",
+    "NodeJS",
+    "ExpressJS"
+  ],
+  "author": "Andrew Yee",
+  "license": "ISC",
+  "dependencies": {
+      "express": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/andrewyeez/MPBackend/issues"
+  },
+  "homepage": "https://github.com/andrewyeez/MPBackend#readme"
 }
