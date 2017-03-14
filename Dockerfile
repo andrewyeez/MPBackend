@@ -1,10 +1,9 @@
-FROM node:4.2
+FROM node:4-onbuild
 MAINTAINER Andrew Yee <andrew.yee@mail.com>
 
-COPY . /src
+COPY . /src/MPBackend
+WORKDIR /src/MPBackend
 
-RUN cd /src && npm install express --save
+RUN npm install
 
-EXPOSE 3000
-
-CMD ["node", "/src/app/app.js"]
+CMD ["node", "."]
