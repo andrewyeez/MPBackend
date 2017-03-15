@@ -1,17 +1,34 @@
 // Users Route Module
-
+var PATH = '/users'
 module.exports.controller = function(app) {
-
-  // dummy test page
-  app.get('/users', function(req,res){
+  /**
+   * lol got bored and made this table 
+   * _________________________________________________
+   * |__Request__|______URI_____|__Input__|__Output__|
+   * |   GET     | '/users'     |         |  json    |
+   * |   POST    | '/users'     |         |  json    |
+   * |   PUT     | '/users'     |         |  json    |
+   * |   GET     | '/users/:id' |         |  json    |
+   * -------------------------------------------------
+   */
+  app.get(PATH, function(req,res){
     data = USERS.all
     res.json(data)
   })
+  app.post(PATH, function (req, res) {
+    res.send('POST request to the homepage')
+  })
 
+  app.put(PATH, function (req, res) {
+    res.send('PUT request to the homepage')
+  })
+  app.get(PATH + '/:id', function(req,res){
+    data = USERS.all
+    data = data[req.param("id")]
+    res.json(data)
+  })
 }
 
-
-// dummy USERS object
 // Mimics an Object representation of the USERS db
 
 var USERS = {
