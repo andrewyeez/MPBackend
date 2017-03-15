@@ -2,7 +2,9 @@
 var PATH = '/users'
 module.exports.controller = function(app) {
   /**
-   * lol got bored and made this table
+   * Todo:
+   *   - POST request logic
+   *   - PUT request logic
    * _________________________________________________
    * |__Request__|______URI_____|__Input__|__Output__|
    * |   GET     | /users       |         |  json    |
@@ -16,11 +18,11 @@ module.exports.controller = function(app) {
     res.json(data)
   })
   app.post(PATH, function (req, res) {
-    res.send('POST request to the homepage')
+    res.send('POST request needs to be implemented')
   })
 
   app.put(PATH, function (req, res) {
-    res.send('PUT request to the homepage')
+    res.send('PUT request needs to be implemented')
   })
   app.get(PATH + '/:id', function(req,res){
     data = USERS.all
