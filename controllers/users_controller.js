@@ -2,13 +2,13 @@
 var PATH = '/users'
 module.exports.controller = function(app) {
   /**
-   * lol got bored and made this table 
+   * lol got bored and made this table
    * _________________________________________________
    * |__Request__|______URI_____|__Input__|__Output__|
-   * |   GET     | '/users'     |         |  json    |
-   * |   POST    | '/users'     |         |  json    |
-   * |   PUT     | '/users'     |         |  json    |
-   * |   GET     | '/users/:id' |         |  json    |
+   * |   GET     | /users       |         |  json    |
+   * |   POST    | /users       |         |  json    |
+   * |   PUT     | /users/{id}  |         |  json    |
+   * |   GET     | /users/{id}  |         |  json    |
    * -------------------------------------------------
    */
   app.get(PATH, function(req,res){
