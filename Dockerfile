@@ -4,6 +4,6 @@ MAINTAINER Andrew Yee <andrew.yee@mail.com>
 COPY . /src/MPBackend
 WORKDIR /src/MPBackend
 
-RUN npm install
+RUN npm install && npm install --save-dev nodemon
 
-CMD ["node", "."]
+CMD ["nodemon", "."]
