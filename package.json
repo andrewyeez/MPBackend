@@ -7,6 +7,7 @@
     "test": "test"
   },
   "scripts": {
+    "start": "nodemon -L",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,7 +22,7 @@
   "author": "Andrew Yee",
   "license": "ISC",
   "dependencies": {
-      "express": "*"
+      "express": "4.15.2"
   },
   "bugs": {
     "url": "https://github.com/andrewyeez/MPBackend/issues"
