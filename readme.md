@@ -10,8 +10,5 @@ GET      |  /users/{id} | List a user
 PUT      |  /users/{id} | Update a user
 POST     |  /users      | Create a user
 
-# TODO
-Need to plan the bigger picture of what the backend end needs to provide.
-Go back to the user stories and finish what will be needed. We need to also
-connect to a database that will persist outside the app container. Preferably
-using MongoDB with Mongoose framework.
+# Issue
+The npm install is currently not working as intended, I want to mount my host directory to the app container but it has to map 1 to 1 and for that reason my local node_modules folder has to exist and contain all the dependencies on my packagejson. This was not what I intented to happend, I would like to have a dockerfile spin up a container that will download the necesaary dependencies and still be able to mount with my app. Maybe I just have to remove the node_module folder from my directory to accomplish this and only include certain folders.
