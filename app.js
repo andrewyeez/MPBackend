@@ -7,7 +7,7 @@ users.controller(app);
 
 // This is an example of letting the app.js handle the routing
 app.get('/', function (req, res) {
-  res.send('This!')
+  res.send('This retest fdf!')
 })
 
 // This is defining what port to listen to
