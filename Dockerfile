@@ -2,8 +2,11 @@ FROM node:4-onbuild
 MAINTAINER Andrew Yee <andrew.yee@mail.com>
 
 COPY . /src/MPBackend
+
+RUN npm install nodemon -g
+
 WORKDIR /src/MPBackend
 
-RUN npm install && npm install --save-dev nodemon
+RUN npm install
 
-CMD ["nodemon", "."]
+CMD npm start
