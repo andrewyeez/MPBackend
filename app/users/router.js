@@ -1,7 +1,6 @@
 var express = require('express')
 var router = express.Router()
 
-
 // adding our controller files
 var all = require('./controllers/all')
 var create = require('./controllers/create')
