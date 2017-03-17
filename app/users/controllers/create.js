@@ -1,8 +1,13 @@
 var express = require('express')
 var router = express.Router()
+var User = require('../schema.js')
+
 
 router.post('/', function (req,res) {
-  res.send('POST request needs to be implemented')
+  User.create(req.body, function (err, newUser) {
+    if (err) return handleError(err)
+    res.send({"status": "success"})
+  })
 })
 
 module.exports = router
