@@ -7,7 +7,7 @@ Request  | URI          | Action
 -------- | ------------ | ---------------
 GET      |  /users      | List all users
 GET      |  /users/{id} | List a user
-PUT      |  /users/{id} | Update a user
+PUT      |  /users/{id} | Update a username
 POST     |  /users      | Create a user
 
 # Issue
