@@ -1,8 +1,14 @@
 var express = require('express')
 var router = express.Router()
+var User = require('../schema.js')
 
 router.get('/', function (req,res) {
-  res.send('GET request needs to be implemented')
+  User.find({}, function(err, users) {
+    res.send(users);
+  });
 })
+
+// delete everything Users
+// User.remove().exec();
 
 module.exports = router

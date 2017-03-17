@@ -1,9 +1,13 @@
 var express = require('express')
 var router = express.Router()
+var User = require('../schema.js')
 
 router.get('/:id', function (req,res) {
-  var num = req.param("id")
-  res.send('Here is the id you sent ' + num)
+  var id = req.param("id")
+  User.findById(id, function (err, user) {
+    if (err) return handleError(err)
+    res.send(user)
+  })
 })
 
 module.exports = router

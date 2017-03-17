@@ -1,8 +1,14 @@
 var express = require('express')
 var router = express.Router()
+var User = require('../schema.js')
 
-router.put('/', function (req,res) {
-  res.send('PUT request needs to be implemented')
+router.put('/:id', function (req,res) {
+  var id = req.param("id")
+  var newUsername = req.param("newUsername")
+  User.findByIdAndUpdate( id , { "username" : newUsername }, function(err, post) {
+    if (err) return handleError(err)
+    res.send({"status": "success"})
+  })
 })
 
 module.exports = router
