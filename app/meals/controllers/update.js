@@ -1,9 +1,10 @@
 var express = require('express')
 var router = express.Router()
-var User = require('../schema.js')
+var Meal = require('../schema.js')
 
-router.post('/', function (req,res) {
-  User.create(req.body, function (err, newUser) {
+router.put('/:id', function (req,res) {
+  var id = req.param("id")
+  Meal.findByIdAndUpdate( id , req.body, function(err, post) {
     if (err) return handleError(err)
     res.send({"status": "success"})
   })
