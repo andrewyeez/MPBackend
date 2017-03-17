@@ -1,6 +1,15 @@
 # MPBackend
 Meal Planner Backend service
 
+# Meals API
+
+Request  | URI          | Action
+-------- | ------------ | ---------------
+GET      |  /meals      | List all meals
+GET      |  /meals/{id} | List a meal
+PUT      |  /meals/{id} | Update a meal
+POST     |  /meals      | Create a meal
+
 # Users API
 
 Request  | URI          | Action
