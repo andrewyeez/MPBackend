@@ -38,9 +38,9 @@ db.once('open', function() {
   console.log('We are connected!')
 });
 
-// Bring in the Schemas
-require('./app/users/schema')
-require('./app/meals/schema')
+// Bring in the Models
+require('./app/users/model')
+require('./app/meals/model')
 
 
 // Plugins
