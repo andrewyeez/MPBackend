@@ -1,5 +1,5 @@
-# MPBackend
-Meal Planner Backend service
+# Macro Counter API
+Develop a restful api that will be used to monitor a users daily meals while keeping track of the macros. It will implement a token authentication system to verify the request and use mongodb to store the data.
 
 # Meals API
 
