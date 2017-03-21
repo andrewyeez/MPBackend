@@ -41,6 +41,7 @@ db.once('open', function() {
 // Bring in the Models
 require('./app/users/model')
 require('./app/meals/model')
+require('./app/days/model')
 
 
 // Plugins
@@ -54,6 +55,12 @@ mongoose.model('Meal').schema.plugin(autoIncrement.plugin, {
   model: 'Meal',
   startAt: 1
 })
+// Auto Increment _id starting at
+mongoose.model('Day').schema.plugin(autoIncrement.plugin, {
+  model: 'Day',
+  startAt: 1
+})
+
 
 
 // Connect to MongoDB and create/use database called todoAppTest
