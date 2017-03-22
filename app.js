@@ -11,8 +11,10 @@ app.use(bodyParser.json());
 // This is an example of calling the controller file to handle the routing
 var users = require('./app/users/router')
 var meals = require('./app/meals/router')
+var days = require('./app/days/router')
 app.use('/users', users)
 app.use('/meals', meals)
+app.use('/days', days)
 
 
 // This is an example of letting the app.js handle the routing
