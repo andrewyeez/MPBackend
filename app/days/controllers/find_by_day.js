@@ -1,6 +1,6 @@
 var express = require('express')
 var router = express.Router()
-var Meal = require('../schema.js')
+var Meal = require('../model.js')
 
 router.get('/:day', function (req,res) {
   var id = req.param("id")

@@ -1,6 +1,6 @@
 var express = require('express')
 var router = express.Router()
-var User = require('../schema.js')
+var User = require('../model.js')
 
 router.get('/', function (req,res) {
   User.find({}, function(err, users) {
