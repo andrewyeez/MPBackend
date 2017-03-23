@@ -1,5 +1,5 @@
 var express = require('express')
-var Meal = require('../schema')
+var Meal = require('../model')
 var router = express.Router()
 
 router.post('/', function (req,res) {

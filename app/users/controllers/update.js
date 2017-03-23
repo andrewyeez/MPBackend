@@ -1,5 +1,5 @@
 var express = require('express')
-var User = require('../schema')
+var User = require('../model')
 var router = express.Router()
 
 
