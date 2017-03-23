@@ -1,13 +1,14 @@
 var express = require('express')
+var User = require('../schema')
 var router = express.Router()
-var User = require('../schema.js')
+
 
 router.put('/:id', function (req,res) {
   var id = req.param("id")
   var newUsername = req.param("newUsername")
   User.findByIdAndUpdate( id , { "username" : newUsername }, function(err, post) {
-    if (err) return handleError(err)
-    res.send({"status": "success"})
+    if (err) return res.send(err)
+    res.send({"message":"Success on saving!"})
   })
 })
 

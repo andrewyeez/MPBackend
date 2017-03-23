@@ -1,11 +1,11 @@
 var express = require('express')
+var User = require('../schema')
 var router = express.Router()
-var User = require('../schema.js')
 
 router.post('/', function (req,res) {
-  User.create(req.body, function (err, newUser) {
-    if (err) return handleError(err)
-    res.send({"status": "success"})
+  User.create( req.body, function (err) {
+    if (err) return res.send(err)
+    res.send({"message":"Success on saving!"})
   })
 })
 

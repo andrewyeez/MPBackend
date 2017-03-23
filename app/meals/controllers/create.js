@@ -1,11 +1,11 @@
 var express = require('express')
+var Meal = require('../schema')
 var router = express.Router()
-var Meal = require('../schema.js')
 
 router.post('/', function (req,res) {
   Meal.create(req.body, function (err, newMeal) {
-    if (err) return handleError(err)
-    res.send({"status": "success"})
+    if (err) return res.send(err)
+    res.send({"message":"Success on saving!"})
   })
 })
 
