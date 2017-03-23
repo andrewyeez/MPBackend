@@ -1,12 +1,11 @@
 var express = require('express')
+var Meal = require('../schema')
 var router = express.Router()
-var Meal = require('../schema.js')
 
 router.get('/:id', function (req,res) {
-  var id = req.param("id")
-  Meal.findById(id, function (err, meals) {
-    if (err) return handleError(err)
-    res.send(meals)
+  Meal.findById( req.param("id") , function (err, meals) {
+    if (err) return res.send(err)
+    res.send({"message":"Success on saving!"})
   })
 })
 

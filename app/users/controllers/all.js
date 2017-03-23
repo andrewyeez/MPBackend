@@ -9,7 +9,4 @@ router.get('/', function (req,res) {
   })
 })
 
-// delete everything Users
-// User.remove().exec();
-
 module.exports = router
