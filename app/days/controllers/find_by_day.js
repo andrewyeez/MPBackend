@@ -1,12 +1,12 @@
 var express = require('express')
 var router = express.Router()
-var User = require('../model.js')
+var Day = require('../model.js')
 
-router.get('/:id', function (req,res) {
+router.get('/:day', function (req,res) {
   var id = req.param("id")
-  User.findById(id, function (err, user) {
+  Day.findById(id, function (err, days) {
     if (err) return handleError(err)
-    res.send(user)
+    res.send(days)
   })
 })
 

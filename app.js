@@ -1,6 +1,5 @@
 var express = require('express')
 var bodyParser = require('body-parser')
-var autoIncrement = require('mongoose-auto-increment')
 var app = express()
 
 // Express version 4 and above requires extra middle-ware layer to handle
@@ -11,8 +10,10 @@ app.use(bodyParser.json());
 // This is an example of calling the controller file to handle the routing
 var users = require('./app/users/router')
 var meals = require('./app/meals/router')
+var days = require('./app/days/router')
 app.use('/users', users)
 app.use('/meals', meals)
+app.use('/days', days)
 
 
 // This is an example of letting the app.js handle the routing
@@ -25,37 +26,15 @@ app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
 
-// Export the app instance for unit testing via supertest
-module.exports = app
-
 // Connect to db
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://192.168.99.100:27017/mpbackend')
 var db = mongoose.connection
-autoIncrement.initialize(db);
 db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', function() {
   console.log('We are connected!')
 });
 
-// Bring in the Schemas
-require('./app/users/schema')
-require('./app/meals/schema')
-
-
-// Plugins
-// Auto Increment _id starting at 1
-mongoose.model('User').schema.plugin(autoIncrement.plugin, {
-  model: 'User',
-  startAt: 1
-})
-// Auto Increment _id starting at
-mongoose.model('Meal').schema.plugin(autoIncrement.plugin, {
-  model: 'Meal',
-  startAt: 1
-})
-
-
-// Connect to MongoDB and create/use database called todoAppTest
-// var con = mongoose.connect('mongodb://192.168.99.100:27017/mpbackend');
-// autoIncrement.initialize(con);
+// Export the app instance for unit testing via supertest
+module.exports = app
+module.exports = db

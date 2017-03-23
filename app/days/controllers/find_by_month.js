@@ -1,10 +1,10 @@
 var express = require('express')
 var router = express.Router()
-var User = require('../model.js')
+var Meal = require('../model.js')
 
-router.get('/', function (req,res) {
-  User.find({}, function(err, users) {
-    res.send(users);
+router.get('/:month', function (req,res) {
+  Meal.find({}, function(err, meals) {
+    res.send(meals);
   });
 })
 
