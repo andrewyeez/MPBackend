@@ -4,8 +4,9 @@ var User = require('../schema.js')
 
 router.get('/', function (req,res) {
   User.find({}, function(err, users) {
-    res.send(users);
-  });
+    if (err) return res.send(err)
+    res.send(users)
+  })
 })
 
 // delete everything Users

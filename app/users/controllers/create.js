@@ -3,9 +3,14 @@ var router = express.Router()
 var User = require('../schema.js')
 
 router.post('/', function (req,res) {
-  User.create(req.body, function (err, newUser) {
-    if (err) return handleError(err)
-    res.send({"status": "success"})
+  console.log(req.body)
+  var user = new User({
+    username: req.body.username,
+    password: req.body.password,
+    email: req.body.email
+  })
+  user.save( function (err) {
+    if (err) return res.send(err)
   })
 })
 
