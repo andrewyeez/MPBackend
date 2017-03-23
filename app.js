@@ -1,6 +1,5 @@
 var express = require('express')
 var bodyParser = require('body-parser')
-var autoIncrement = require('mongoose-auto-increment')
 var app = express()
 
 // Express version 4 and above requires extra middle-ware layer to handle
