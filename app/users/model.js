@@ -6,7 +6,6 @@
  * A User has many Meals
  *
  */
-var mongoose = require('mongoose')
 
 // define what a USER is
 var userSchema = new mongoose.Schema({
@@ -20,6 +19,7 @@ var userSchema = new mongoose.Schema({
 })
 
 var User = mongoose.model('User', userSchema)
+userSchema.plugin(autoIncrement.plugin, 'user')
 
 // export our USER so it can be used in our Node application
 module.exports = User

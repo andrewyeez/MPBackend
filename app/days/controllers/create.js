@@ -1,11 +1,11 @@
 var express = require('express')
 var router = express.Router()
-var Meal = require('../model.js')
+var Day = require('../model.js')
 
 router.post('/', function (req,res) {
-  Meal.create(req.body, function (err, newMeal) {
-    if (err) return handleError(err)
-    res.send({"status": "success"})
+  Day.create(req.body, function (err, newDay) {
+    if (err) return res.send({"fail":"true"})
+    res.send({"success":"true"})
   })
 })
 

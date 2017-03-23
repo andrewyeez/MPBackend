@@ -10,13 +10,14 @@ var mongoose = require('mongoose')
 
 // define what a DAY is
 var daySchema = new mongoose.Schema({
-  date: { type: Date, required: true, unique: false },
+  _id: { type: Number, required: true},
+  date: { type: Date, required: false, unique: false },
   morning: { type: String, required: false, unique: false },
   snack1: { type: String, required: false, unique: false },
   lunch: { type: String, required: false, unique: false },
   snack2: { type: String, required: false, unique: false },
   dinner: { type: String, required: false, unique: false },
-  creator: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }]
+  creator: { type: Number, required: false, unique: false }
 },
 {
   timestamps: true

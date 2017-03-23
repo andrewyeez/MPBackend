@@ -1,12 +1,12 @@
 var express = require('express')
 var router = express.Router()
-var Meal = require('../model.js')
+var Day = require('../model.js')
 
 router.get('/:day', function (req,res) {
   var id = req.param("id")
-  Meal.findById(id, function (err, meals) {
+  Day.findById(id, function (err, days) {
     if (err) return handleError(err)
-    res.send(meals)
+    res.send(days)
   })
 })
 
