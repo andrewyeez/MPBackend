@@ -9,4 +9,4 @@ router.post('/', function (req,res) {
   })
 })
 
-modul.exports = router
+module.exports = router

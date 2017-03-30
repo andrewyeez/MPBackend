@@ -11,7 +11,7 @@
    date: {type: Date, required: true},
    morning: {type: Array},
    snack1: {type: Array},
-   lunch: {type: Array}
+   lunch: {type: Array},
    snack2: {type: Array},
    dinner: {type: Array}
  },
