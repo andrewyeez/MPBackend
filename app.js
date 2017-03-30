@@ -4,8 +4,8 @@ var app = express()
 
 // Express version 4 and above requires extra middle-ware layer to handle
 // POST request. This middle-ware is called as ‘bodyParser’.
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 // This is an example of calling the controller file to handle the routing
 var users = require('./app/users/router')
