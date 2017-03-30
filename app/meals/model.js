@@ -9,6 +9,7 @@
 
  var mongoose = require('mongoose')
  var connection = require('../../db')
+ var autoIncrement = require('mongoose-auto-increment')
 
 var mealSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: false },
@@ -23,4 +24,6 @@ var mealSchema = new mongoose.Schema({
   timestamps: true
 })
 
+autoIncrement.initialize(connection)
+mealSchema.plugin(autoIncrement.plugin, 'Meal')
 module.exports = mongoose.model('Meal', mealSchema)
