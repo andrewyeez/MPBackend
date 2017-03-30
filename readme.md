@@ -1,6 +1,15 @@
 # Macro Counter API
 Develop a restful api that will be used to monitor a users daily meals while keeping track of the macros. It will implement a token authentication system to verify the request and use mongodb to store the data.
 
+# Days API
+
+Request  | URI               | Action
+-------- | ----------------- | ---------------
+GET      |  /days            | List all days
+GET      |  /days/{id}       | List a day
+PUT      |  /days/{id}       | Update a day
+POST     |  /days/user/{id}  | List all days by a user
+
 # Meals API
 
 Request  | URI          | Action
