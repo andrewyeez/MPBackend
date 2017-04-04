@@ -1,6 +1,17 @@
 # Macro Counter API
 Develop a restful api that will be used to monitor a users daily meals while keeping track of the macros. It will implement a token authentication system to verify the request and use mongodb to store the data.
 
+# April 2017 To Do
+* Set up and use authenticated calls
+* Use ENV variables to set up config logics
+* Fix issue with the copy file path to not include node_module folders (Dockerfile issue)
+* Seeded Database
+* Create Automated Test Cases [Find a framework to use]
+  * Test Endpoints (functional)
+  * Test Database connection (functional)
+  * Test Relations (unit)
+  * Test new npm packages being used (integration)
+
 # Days API
 
 Request  | URI               | Action
@@ -34,6 +45,3 @@ The npm install is currently not working as intended, I want to mount my host di
 # Insight on the Issue (1)
 
 [http://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder] First, using the ADD instruction in a Dockerfile is very different from using a volume (either via the -v argument to docker run or the VOLUME instruction in a Dockerfile). The ADD and COPY commands just take a copy of the files at the time docker build is run. These files are not updated until a fresh image is created with the docker build command. By contrast, using a volume is essentially saying "this directory should not be stored in the container image; instead use a directory on the host"; whenever a file inside a volume is changed, both the host and container will see it immediately.
-
-# Issue (2)
-I plan on having user accounts to log in and we need to create some type of session to keep the user logged on while they are on the page. I could use cookies to let the user be able to move around the website without having to re-log. This is more of a front end problem then than it is a back end issue.
