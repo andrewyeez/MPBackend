@@ -9,6 +9,7 @@
 
 var mongoose = require('mongoose')
 var connection = require('../../db')
+var autoIncrement = require('mongoose-auto-increment')
 
 var userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: false },
@@ -19,4 +20,6 @@ var userSchema = new mongoose.Schema({
   timestamps: true
 })
 
+autoIncrement.initialize(connection)
+userSchema.plugin(autoIncrement.plugin, 'User')
 module.exports = connection.model('User', userSchema)
