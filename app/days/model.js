@@ -2,6 +2,8 @@
  *
  *  Days
  *
+ * Days can have many meals
+ * Days belongs to a user
  */
 
  var mongoose = require('mongoose')
@@ -14,7 +16,8 @@
    snack1: {type: Array},
    lunch: {type: Array},
    snack2: {type: Array},
-   dinner: {type: Array}
+   dinner: {type: Array},
+   userID: {type: Number, required: true}
  },
  {
    timestamps: true
