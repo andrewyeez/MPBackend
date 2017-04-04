@@ -18,7 +18,8 @@ var mealSchema = new mongoose.Schema({
   fat: { type: Number, required: true, unique: false },
   calories: { type: Number, required: true, unique: false },
   rating: { type: Number, required: true, unique: false },
-  serving: { type: String, required: true, unique: false }
+  serving: { type: String, required: true, unique: false },
+  userID: {type: Number, required: true}
 },
 {
   timestamps: true
